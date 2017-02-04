@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+    <Resource name="jdbc/asteriskdb" auth="Container" type="javax.sql.DataSource" maxActive="100" maxIdle="20" maxWait="10000" username="root" password="kisspbx" driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://db:3306/asterisk?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true" validationQuery="SELECT 1" removeAbandoned="true" removeAbandonedTimeout="300" />
+</Context>

@@ -1,0 +1,30 @@
+version: '2' 
+services:
+  db:
+   image: "mysql"
+   environment:
+     MYSQL_ROOT_PASSWORD: kisspbx
+   volumes:
+     - mysql-storage:/var/lib/mysql
+
+  asterisk:
+    build: asterisk
+    image: kisspbx/asterisk
+    volumes:
+      - asterisk-config:/etc/asterisk
+    expose:
+      - "5038"
+
+  tomcat:
+    build: "kisspbx"
+    image: kisspbx/app
+    volumes:
+      - asterisk-config:/etc/asterisk
+    expose:
+      - "8080"
+    ports:
+      - "81:8080"
+
+volumes:
+  asterisk-config:
+  mysql-storage:
