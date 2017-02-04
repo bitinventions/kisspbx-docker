@@ -2,19 +2,19 @@
 Docker installation for testing kisspbx 
 
 Start containers with docker compose:
-'''
+```
 docker-compose -p kisspbx up -d
-'''
+```
 
 Create database:
-'''
+```
 docker exec -it kisspbx_db_1 mysqladmin -u root --password="kisspbx" create asterisk
-'''
+```
 
 Restart containers to allow application server to connect and rebuild database:
-'''
+```
 docker-compose -p kisspbx restart
-'''
+```
 
 Create AMI user to allow application server to connect to asterisk:
 
